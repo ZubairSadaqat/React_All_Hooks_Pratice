@@ -4,7 +4,7 @@ const Fetch = (url, options) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  async function fethData() {
+  async function fetchData() {
     setLoading(true);
     try {
       let response = await fetch(url, { ...options });
@@ -20,10 +20,10 @@ const Fetch = (url, options) => {
   }
 
   useEffect(() => {
-    fethData();
+    fetchData();
   }, []);
 
-  return [loading, data];
+  return [data, loading];
 };
 
 export default Fetch;
